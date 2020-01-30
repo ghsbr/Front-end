@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>mappa</title>
+
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
+    <script src="Leaflet.heat/dist/leaflet-heat.js"></script>
+
+    <style>
+        #map{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+<script>
+    (async () => {
+        const map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const data = await (await fetch('http://localhost:3000/all-cities')).json();
+
+        var points = []
+        data.forEach(element => {
+            points.push(new Array(element.coordinates.latitude, element.coordinates.longitude, element.aqi))
+            
+        });
+        
+        //é servito per trovare il max
+        /*var top = 0
+        data.forEach(element => {
+            if(element.aqi > top)
+            {
+                top = element.aqi
+            }
+        });
+        console.log(top);*/
+
+        var heat = L.heatLayer(points, {radius: 50, minOpacity: 0.9, maxZoom: 16, blur: 50, max: 664}).addTo(map); //si puó tweakera
+
+    })().catch(console.error)
+</script>
+</html>
