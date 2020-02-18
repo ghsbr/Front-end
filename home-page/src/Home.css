@@ -8,3 +8,10 @@
   margin: auto;
   padding: 0;
 }
+
+.map {
+  height: 400px;
+  width: 50%;
+  margin-top: 20px;
+  left: -300px;
+}
