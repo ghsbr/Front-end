@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="plotly.min.js"></script>
+    
+    
+    <title>Document</title>
+</head>
+<body>
+  
+    <div id="chart"></div>
+    <script>      
+        var txt = `{
+                    "time" : ['2020-10-04','2021-11-04', '2023-12-04' ]
+                   "temperatura" : [10,10,2]
+                  }`; 
+   
+     //   var obj = JSON.parse(txt); 
+    
+        Plotly.d3.json('https://api.myjson.com/bins/u68ak', function(error, figure) {
+         if (error) throw error;
+
+
+         var trace1 = {
+          x:figure.time, 
+			    y:figure.temperature, 
+			    marker: {color: "rgba(142,189,42,0.9)"}, 
+			    name: "B18_LR_hdh", 
+			    type: 'scatter'
+        }  
+        var trace2 = {
+          x:figure.time,
+          y:figure.tempetature,
+          marker: {color: "rgba(142,189,42,0.9)"}, 
+			    name: "B18_LR_hdh", 
+			    type: 'scatter'
+        }
+        var layout = {
+        yaxis:{ title : 'Temperature axis', 
+                
+        },
+        xaxis:{
+            titlefont :{
+               size : 30,
+               color : 'red',
+               text : 'Tempo',
+            }
+            
+          },
+        
+      
+      }   
+      var data = [trace1, trace2];
+      Plotly.newPlot('myDiv',data,layout,{scrollZoom : true})
+  });
+ 
+
+    /*
+    Plotly.plot('chart', [{
+        y:obj.temperatura,
+        x:obj.time,
+        type:'line'
+        }],layout,{scrollZoom : true});
+        var ctn = 0;
+            
+        Plotly.extendTraces('chart',{ y:[[getdata()]]},[0]);
+        ctn++;*/
+
+/*
+{
+  "ts": "2020-01-15T21:00:00.000Z",
+  "pm25": {
+    "aqi": 421
+  },
+  "temperature": 17,
+  "coordinates": {
+    "latitude": 23.79611913,
+    "longitude": 90.41756094
+  }
+}*/
+                
+        </script>
+
+        <div id="myDiv"></div>
+</body>
+</html>
+
+    
+        
