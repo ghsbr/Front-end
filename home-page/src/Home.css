@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+}
+
+.globe {
+  height: 40%;
+  width: 60%;
+  margin: auto;
+  padding: 0;
+}
