@@ -1,0 +1,80 @@
+[
+  {
+    "city": "Sarajevo",
+    "country": "Bosnia Herzegovina",
+    "id": "S9QykcmiaArF5cS3d",
+    "url": "/bosnia-herzegovina/federation-of-b-h/sarajevo",
+    "aqi": 231,
+    "flagURL": "https://cdn.airvisual.net/flags/bosnia-herzegovina.jpg",
+    "followersCount": 30279,
+    "updatedAt": "2020-01-15T09:00:00.000Z",
+    "rank": 1
+  },
+  {
+    "city": "Dhaka",
+    "country": "Bangladesh",
+    "id": "vnxvinME52vNycse5",
+    "url": "/bangladesh/dhaka",
+    "aqi": 225,
+    "flagURL": "https://cdn.airvisual.net/flags/bangladesh.jpg",
+    "followersCount": 64523,
+    "updatedAt": "2020-01-15T09:00:00.000Z",
+    "rank": 2
+  },
+  {
+    "city": "Melbourne",
+    "country": "Australia",
+    "id": "ELvgEoCTW4i2NRgi7",
+    "url": "/australia/victoria/melbourne",
+    "aqi": 211,
+    "flagURL": "https://cdn.airvisual.net/flags/australia.jpg",
+    "followersCount": 239226,
+    "updatedAt": "2020-01-15T09:00:00.000Z",
+    "rank": 3
+  },
+  {
+    "city": "Kolkata",
+    "country": "India",
+    "id": "7bKmEaG2yvFWDPgis",
+    "url": "/india/west-bengal/kolkata",
+    "aqi": 199,
+    "flagURL": "https://cdn.airvisual.net/flags/india.jpg",
+    "followersCount": 1483115,
+    "updatedAt": "2020-01-15T08:00:00.000Z",
+    "rank": 4
+  },
+  {
+    "city": "Delhi",
+    "country": "India",
+    "id": "ceJrHNhXup9KtZTvQ",
+    "url": "/india/delhi",
+    "aqi": 189,
+    "flagURL": "https://cdn.airvisual.net/flags/india.jpg",
+    "followersCount": 1723060,
+    "updatedAt": "2020-01-15T09:00:00.000Z",
+    "rank": 5
+  },
+  {
+    "city": "Lahore",
+    "country": "Pakistan",
+    "id": "Dt8HhEj6mC2eatyBr",
+    "url": "/pakistan/punjab/lahore",
+    "aqi": 188,
+    "flagURL": "https://cdn.airvisual.net/flags/pakistan.jpg",
+    "followersCount": 78559,
+    "updatedAt": "2020-01-15T09:00:00.000Z",
+    "rank": 6
+  },
+  {
+    "city": "Belgrade",
+    "country": "Serbia",
+    "id": "nDEeuXCtyanufBLa6",
+    "url": "/serbia/central-serbia/belgrade",
+    "aqi": 180,
+    "flagURL": "https://cdn.airvisual.net/flags/serbia.jpg",
+    "followersCount": 60822,
+    "updatedAt": "2020-01-15T08:00:00.000Z",
+    "rank": 7
+  }
+]
+
