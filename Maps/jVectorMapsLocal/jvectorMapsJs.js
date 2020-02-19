@@ -1,3 +1,3 @@
 $(function(){
-  $('#map').vectorMap({map: 'world_merc'});
+  $('#map').vectorMap({map: 'it_merc'});
 });
