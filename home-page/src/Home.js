@@ -22,6 +22,7 @@ class App extends Component {
       <React.Fragment>
         <Earth changeCountry={this.onSelectCountry.bind(this)}></Earth>
         <Map selectedCountry={this.state.selectedCountry}></Map>
+        <Map selectedCountry={this.state.selectedCountry}></Map>
       </React.Fragment>
     );
   }

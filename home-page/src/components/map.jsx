@@ -15,7 +15,7 @@ export default class map extends Component {
     window.$(() => {
       window.$(map).vectorMap({
         map: this.props.selectedCountry.toLowerCase() + "_merc",
-        backgroundColor: "white",
+        backgroundColor: "transparent",
         regionStyle: {
           initial: {
             fill: "#36ff3c",
