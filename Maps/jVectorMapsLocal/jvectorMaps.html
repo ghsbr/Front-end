@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mappaJVector</title>
+
+	<!-- LIBRERIES -->
+	<link rel="stylesheet" href="C:\Users\andi0\Desktop\Front-end\home-page\public\libraries\jquery-jvectormap-2.0.5.css">
+
+	<script src="../../home-page/public/libraries\jquery.js"></script>
+	<script src="../../home-page/public/libraries\jquery-jvectormap-2.0.5.min.js"></script>
+	<script src="../../home-page/public/country-maps\italy_merc.js"></script>
+	<script src="../../home-page/public/country-maps\world-merc.js"></script>
+	<script src="../../home-page/public/libraries\miniature.earth.js"></script>
+
+	<!-- STYLE -->
+	<style>
+		#map{
+			height: 500px;
+			width: 50%;
+			margin: auto 20%;
+		}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+</body>
+<script>
+	 $(function(){
+      $('#map').vectorMap({map: 'world_merc'});
+    });
+</script>
+</html>
