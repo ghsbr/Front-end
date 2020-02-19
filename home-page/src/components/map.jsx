@@ -7,12 +7,14 @@ export default class map extends Component {
     this.myRef = React.createRef();
   }
 
-  componentDidMount() {
+  renderMap() {
     const map = this.myRef.current;
+
+    window.$(".jvectormap-container").remove();
 
     window.$(() => {
       window.$(map).vectorMap({
-        map: "it_merc",
+        map: this.props.selectedCountry.toLowerCase() + "_merc",
         backgroundColor: "white",
         regionStyle: {
           initial: {
@@ -26,23 +28,17 @@ export default class map extends Component {
             fill: "green",
             "fill-opacity": 0.8,
             cursor: "pointer"
-          },
-          selected: {
-            fill: "yellow"
-          },
-          selectedHover: {}
+          }
         },
         zoomMax: 1,
-        zoomMin: 1
+        zoomMin: 1,
+        zoomOnScroll: false
       });
     });
   }
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
   render() {
+    this.renderMap();
     return <div className="map" ref={this.myRef}></div>;
   }
 }

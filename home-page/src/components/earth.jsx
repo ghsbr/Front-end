@@ -9,7 +9,7 @@ export default class Earth extends Component {
   configs = {
     location: { lat: 18, lng: 50 },
     zoom: 0.5,
-    quality: 4,
+    quality: 5,
     light: "none",
     lightAmbience: 0,
 
@@ -29,6 +29,10 @@ export default class Earth extends Component {
     return false;
   }
 
+  selectCountry(country) {
+    this.props.changeCountry(country);
+  }
+
   componentDidMount() {
     const node = this.myRef.current;
     const configs = this.configs;
@@ -39,6 +43,25 @@ export default class Earth extends Component {
       myearth.addEventListener("ready", () => {
         myearth.animate("lightAmbience", 1, { duration: 2500 });
         myearth.animate("zoom", 1, { duration: 2000 });
+      });
+
+      myearth.addEventListener("click", event => {
+        if (rotationAngle > 5) return;
+
+        if (event.id) {
+          this.selectCountry(event.id);
+          myearth.animate("location", event.location, { duration: 500 });
+        }
+      });
+
+      let startLocation, rotationAngle;
+
+      myearth.addEventListener("dragstart", () => {
+        startLocation = myearth.location;
+      });
+
+      myearth.addEventListener("dragend", () => {
+        rotationAngle = window.Earth.getAngle(startLocation, myearth.location);
       });
     });
   }
