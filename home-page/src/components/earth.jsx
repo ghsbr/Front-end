@@ -24,6 +24,11 @@ export default class Earth extends Component {
     autoRotateSpeed: 0.7,
     autoRotateDelay: 0
   };
+  scrollOptions = {
+    left: 0,
+    top: 600,
+    behavior: "smooth"
+  };
 
   shouldComponentUpdate() {
     return false;
@@ -50,7 +55,7 @@ export default class Earth extends Component {
 
         if (event.id) {
           this.selectCountry(event.id);
-          myearth.animate("location", event.location, { duration: 500 });
+          window.scrollTo(this.scrollOptions);
         }
       });
 
