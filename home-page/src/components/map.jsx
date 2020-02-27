@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../Home.css";
+import { temp } from "./data/temperature.js";
+import { pol } from "./data/pollution";
 
 export default class map extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ export default class map extends Component {
     backgroundColor: "#383f47",
     regionStyle: {
       initial: {
-        fill: "#36ff3c",
+        fill: "white",
         "fill-opacity": 1,
         stroke: "none",
         "stroke-width": 0,
@@ -29,18 +31,41 @@ export default class map extends Component {
     this.renderMap();
   }
 
+  mapData(country) {
+    switch (this.props.id) {
+      case "temperature":
+        return temp[country];
+      case "pollution":
+        return pol[country];
+      default:
+        break;
+    }
+  }
+
   renderMap() {
     let map = this.myRef.current;
+    let country = this.props.selectedCountry.toLowerCase();
+    let data = this.mapData(country);
+
     window.$(".jvectormap-container").remove();
 
     window.$(() => {
       window.$(map).vectorMap({
-        map: this.props.selectedCountry.toLowerCase() + "_merc",
+        map: country + "_merc",
         backgroundColor: this.config.backgroundColor,
         regionStyle: this.config.regionStyle,
         zoomMax: 4,
         zoomMin: 1,
-        zoomOnScroll: false
+        zoomOnScroll: false,
+        series: {
+          regions: [
+            {
+              values: data,
+              scale: ["#5df22c", "#fa1807"],
+              normalizeFunction: "polynomial"
+            }
+          ]
+        }
       });
     });
   }
