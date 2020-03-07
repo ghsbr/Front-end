@@ -10,12 +10,21 @@
   margin-bottom: 40px;
 }
 
+.data {
+  display: inline-block;
+  width: 47%;
+  margin: 1%;
+}
+
 .map {
+  display: block;
   height: 500px;
-  width: 48%;
-  margin: 10px;
-  float: left;
+  width: 99%;
   border: black 3px solid;
+}
+.graph {
+  display: block;
+  height: 500px;
 }
 
 #pollution {

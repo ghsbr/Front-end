@@ -4,6 +4,10 @@ import "./Home.css";
 
 import Earth from "./components/earth.jsx";
 import Map from "./components/map.jsx";
+import Graph from "./components/graph.jsx";
+
+import { temp } from "./components/data/temperature.js";
+import { pol } from "./components/data/pollution";
 
 class App extends Component {
   constructor(props) {
@@ -21,8 +25,22 @@ class App extends Component {
     return (
       <React.Fragment>
         <Earth changeCountry={this.onSelectCountry.bind(this)}></Earth>
-        <Map selectedCountry={this.state.selectedCountry} id="temperature" />
-        <Map selectedCountry={this.state.selectedCountry} id="pollution" />
+        <div className="data">
+          <Map
+            selectedCountry={this.state.selectedCountry}
+            id="temperature"
+            data={temp[this.state.selectedCountry]}
+          />
+          <Graph />
+        </div>
+        <div className="data">
+          <Map
+            selectedCountry={this.state.selectedCountry}
+            id="pollution"
+            data={pol[this.state.selectedCountry]}
+          />
+          <Graph />
+        </div>
       </React.Fragment>
     );
   }
